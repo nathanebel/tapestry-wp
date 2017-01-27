@@ -13,7 +13,7 @@ import DefaultRoutes from './default-routes'
 import DefaultHTML from './default-html'
 
 
-export default class TapestryServer {
+export default class Tapestry {
 
   constructor ({ config, cwd }) {
     // allow access from class
@@ -49,7 +49,10 @@ export default class TapestryServer {
   startServer () {
     // run server
     this.server.start(err => {
-      if (err) console.log(err)
+      if (err) {
+        console.error(err)
+        return
+      }
       console.log(`🌎  Server running at: ${this.server.info.uri} 👍`)
     })
   }
@@ -68,7 +71,6 @@ export default class TapestryServer {
       }
     })
   }
-
   routeProxy (path) {
     this.server.route({
       method: 'GET',
@@ -84,10 +86,10 @@ export default class TapestryServer {
   routeStatic () {
     this.server.route({
       method: 'GET',
-      path: '/public/{param*}',
+      path: '/_scripts/{param*}',
       handler: {
         directory: {
-          path: 'public'
+          path: '_scripts'
         }
       }
     })
@@ -110,7 +112,10 @@ export default class TapestryServer {
           // get all the props yo
           loadPropsOnServer(renderProps, loadContext, (err, asyncProps) => {
             // 404 if error from Hapi
-            if (err) console.log(err)
+            if (err) {
+              console.error(err)
+              return
+            }
             // get html from props
             const data = {
               markup: renderStaticOptimized(() =>

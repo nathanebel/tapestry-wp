@@ -1,43 +1,16 @@
 #!/usr/bin/env node
 
+'use strict'
+
 const program = require('commander')
-const exec = require('child_process').exec
-const path = require('path')
-const webpack = require('webpack')
-
 const pkg = require('../package.json')
-
-const cwdCached = process.cwd()
 
 program
   .version(pkg.version)
-  .command('build')
-  .action(function() {
-    process.chdir(path.join(__dirname, '..'))
-    exec('./node_modules/babel-cli/bin/babel.js ' + cwdCached + ' --out-dir ./dist/app --presets=es2015,react  --ignore node_modules,__tests__', (err, stdout, stderr) => {
-       if (err) {
-         console.error(err)
-         return
-       }
-       console.log(stdout)
-       console.log('Built Server')
-    })
-  })
-
-program
-  .command('start')
-  .action(function() {
-    global.TAPESTRY_PRODUCTION = true
-    require('../dist/boot.js')
-  })
+  .description(pkg.description)
+  .usage('[options]')
+  .command('dev', 'development mode (default)', { isDefault: true })
+  .command('start', 'production mode')
+  .command('build', 'build client bundle')
 
 program.parse(process.argv)
-
-var NO_COMMAND_SPECIFIED = program.args.length === 0;
-
-if (NO_COMMAND_SPECIFIED) {
-  require('babel-register')({
-    "presets": ["es2015", "react"]
-  })
-  require('../dist/boot.js')
-}
