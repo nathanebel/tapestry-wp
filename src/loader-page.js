@@ -16,7 +16,11 @@ export default class Loader extends Component {
     // LoadContext is basicaly an object we can pass around
     // the sever with our components and some baseUrl on it
     return fetch(`${baseUrl}/${path}`)
-      .then(resp => !resp.ok && throw Error(resp))
+      .then(resp => {
+        if (!resp.ok)
+          return console.error(resp)
+        return resp
+      })
       .then(resp => resp.json())
       .then(data => cb(null, { data: data[0] }))
       .catch(error => cb(error))
