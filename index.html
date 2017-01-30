@@ -1,0 +1,257 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="tapestry">Tapestry</h1>
+<p><a href="https://circleci.com/gh/shortlist-digital/tapestry-wp/tree/develop" target="_blank"><img src="https://circleci.com/gh/shortlist-digital/tapestry-wp/tree/develop.svg?style=shield" alt="CircleCI"></a>
+<a href="https://david-dm.org/shortlist-digital/tapestry-wp" target="_blank"><img src="https://david-dm.org/shortlist-digital/tapestry-wp/status.svg" alt="dependencies Status"></a></p>
+<h2 id="work-in-progress">Work In Progress</h2>
+<p>Very Work in Progress - Eventually:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Top level Component for your Wordpress frontend</span>
+<span class="hljs-keyword">import</span> Base <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Base&apos;</span>
+<span class="hljs-keyword">import</span> Post <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Post&apos;</span>
+<span class="hljs-keyword">import</span> Page <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./components/Page&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  components: {
+    Base, Post, Page
+  },
+  proxyPaths: [<span class="hljs-string">&apos;/robots.txt&apos;</span>],
+  siteUrl: <span class="hljs-string">&apos;http://wordpress-api-site.com&apos;</span>
+}
+</code></pre>
+<h2 id="currently">Currently</h2>
+<p>Tapestry consumes a config object in the root of the parent project i.e. Shortlist, and outputs a Webpack bundle into <code>/public</code> and starts a node server.</p>
+<h2 id="todo">Todo</h2>
+<ul>
+<li>[x] Render React components from the server</li>
+<li>[x] Bundle component tree and serve on the client</li>
+<li>[x] Hook up WP-API to match routes</li>
+<li>[x] Head overrides per page with <code>react-helmet</code></li>
+<li>[x] Supply default routes</li>
+<li>[x] Integrate CSS-in-JS framework</li>
+<li>[ ] Access options, menus through WP-API</li>
+<li>[x] Ability to override loaders - Separate loaders and routes?</li>
+<li>[ ] Ability to override routes</li>
+<li>[ ] WordPress plugin to enable previewing and &apos;View Post&apos; functionality</li>
+<li>[ ] Hydrate single page store</li>
+<li>[ ] Consider a global store of page, post and archive data</li>
+<li>[ ] Permalink WP-API plugin - integrate into Wordpress Tapestry</li>
+<li>[ ] Handle Redirects</li>
+<li>[ ] Hash client bundle, allow path and name override</li>
+<li>[x] Provide prod build option for client bundle</li>
+<li>[x] Define cli interface (<a href="https://medium.freecodecamp.com/writing-command-line-applications-in-nodejs-2cf8327eee2" target="_blank">https://medium.freecodecamp.com/writing-command-line-applications-in-nodejs-2cf8327eee2</a>)</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2017-01-29T19:27:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-30T17:09:07.194Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
